@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us - Story Book's</title>
+
+    <style>
+        /* General Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: black;
+            min-height: 100vh;
+            background-image: url("8.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 25px 15px;
+        }
+
+        nav a {
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+            background-color: lightgreen;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: red;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            width: 100%;
+            padding: 20px;
+        }
+
+        /* Contact Form Container */
+        .contact-container {
+            width: 100%;
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+
+        /* Heading */
+        .contact-container h2 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 30px;
+            font-size: clamp(25px, 4vw, 32px);
+        }
+
+        /* Form Labels */
+        label {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        /* Input Fields */
+        input,
+        textarea {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.95);
+            transition: border-color 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #9146d8;
+            box-shadow: 0 0 5px rgba(145, 70, 216, 0.4);
+        }
+
+        textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        /* Submit Button */
+        button {
+            display: block;
+            width: 100%;
+            max-width: 250px;
+            margin: 25px auto 0;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #50aee8, #9146d8);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease,
+                        opacity 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.03);
+            opacity: 0.9;
+        }
+
+        button:focus-visible,
+        nav a:focus-visible {
+            outline: 3px solid #222;
+            outline-offset: 3px;
+        }
+
+        /* Footer */
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px 15px;
+            margin-top: auto;
+            background: rgba(255, 255, 255, 0.55);
+        }
+
+        footer h1 {
+            font-size: 24px;
+        }
+
+        /* Tablet Screens */
+        @media (max-width: 768px) {
+            body {
+                background-attachment: scroll;
+            }
+
+            nav {
+                gap: 10px;
+                padding: 20px 12px;
+            }
+
+            nav a {
+                padding: 10px 14px;
+                font-size: 14px;
+            }
+
+            main {
+                padding: 15px;
+            }
+
+            .contact-container {
+                max-width: 600px;
+                padding: 30px;
+                margin: 20px auto;
+            }
+        }
+
+        /* Mobile Phones */
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 15px 20px;
+            }
+
+            nav a {
+                width: 100%;
+                text-align: center;
+                padding: 12px;
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            .contact-container {
+                width: 100%;
+                padding: 22px 18px;
+                margin: 15px auto;
+                border-radius: 12px;
+            }
+
+            .contact-container h2 {
+                margin-bottom: 20px;
+            }
+
+            input,
+            textarea {
+                padding: 12px;
+                font-size: 16px;
+            }
+
+            textarea {
+                min-height: 120px;
+            }
+
+            button {
+                max-width: 100%;
+            }
+
+            footer h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <a href="product.html">Products</a>
+        <a href="login form.html">Login Form</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="contact-container">
+
+            <h2>Contact Us</h2>
+
+            <form id="contactForm">
+
+                <label for="name">Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    autocomplete="name"
+                    required
+                >
+
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    autocomplete="email"
+                    required
+                >
+
+                <label for="message">Message</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Write your message..."
+                    required
+                ></textarea>
+
+                <button type="submit">Send Message</button>
+
+            </form>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <h1>Yourmakeyy</h1>
+        <p>&copy; 2026 Story Book's. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        const contactForm = document.getElementById("contactForm");
+
+        contactForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            alert("Thank you! Your message has been submitted.");
+
+            contactForm.reset();
+        });
+    </script>
+
+</body>
+</html>

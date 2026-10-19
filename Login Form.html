@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cute Records - Login</title>
+
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Page Background */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            background-image: url("1.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Login Container */
+        .login-box {
+            background: rgba(144, 238, 144, 0.95);
+            width: 100%;
+            max-width: 380px;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* Logo */
+        .logo {
+            width: 70px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        /* Headings */
+        .login-box h1 {
+            color: #222;
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .login-box h2 {
+            color: #d62828;
+            font-size: 16px;
+            font-weight: normal;
+            margin-bottom: 25px;
+        }
+
+        /* Input Fields */
+        .login-box input {
+            display: block;
+            width: 100%;
+            padding: 13px;
+            margin: 14px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            font-size: 16px;
+            background: white;
+        }
+
+        .login-box input:focus {
+            border-color: #ff69b4;
+            box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+        }
+
+        /* Login Button */
+        .login-box button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 10px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 17px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .login-box button:hover {
+            background-color: #ff1493;
+        }
+
+        .login-box button:active {
+            transform: scale(0.98);
+        }
+
+        /* Error Message */
+        .error-msg {
+            display: none;
+            color: #c00000;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        /* Responsive Design: Tablets */
+        @media (max-width: 768px) {
+            body {
+                padding: 16px;
+                background-attachment: scroll;
+            }
+
+            .login-box {
+                max-width: 360px;
+                padding: 25px;
+            }
+
+            .login-box h1 {
+                font-size: 25px;
+            }
+        }
+
+        /* Responsive Design: Mobile Phones */
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+
+            .login-box {
+                width: 100%;
+                max-width: 340px;
+                padding: 22px 18px;
+                border-radius: 12px;
+            }
+
+            .logo {
+                width: 60px;
+                height: 70px;
+            }
+
+            .login-box h1 {
+                font-size: 23px;
+            }
+
+            .login-box h2 {
+                font-size: 14px;
+                line-height: 1.5;
+            }
+
+            .login-box input {
+                padding: 12px;
+                font-size: 16px;
+            }
+
+            .login-box button {
+                padding: 12px;
+                font-size: 16px;
+            }
+        }
+
+        /* Small Phones */
+        @media (max-width: 320px) {
+            .login-box {
+                padding: 18px 14px;
+            }
+
+            .login-box h1 {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Login Section -->
+    <div id="login-section" class="login-box">
+
+        <img
+            src="mylogo.jpg"
+            class="logo"
+            alt="Cute Records Logo"
+        >
+
+        <h1>Welcome Back</h1>
+
+        <h2>Login to continue your journey</h2>
+
+        <form id="login-form">
+            <input
+                type="text"
+                id="username"
+                placeholder="Username"
+                autocomplete="username"
+                aria-label="Username"
+                required
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                autocomplete="current-password"
+                aria-label="Password"
+                required
+            >
+
+            <button type="submit">Login</button>
+
+            <p
+                id="error"
+                class="error-msg"
+                role="alert"
+                aria-live="polite"
+            >
+                Incorrect username or password. Please try again.
+            </p>
+        </form>
+
+    </div>
+
+    <!-- Login Validation -->
+    <script>
+        const loginForm = document.getElementById("login-form");
+
+        loginForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const user = document.getElementById("username").value.trim();
+            const pass = document.getElementById("password").value;
+            const error = document.getElementById("error");
+
+            // Demo credentials
+            const correctUser = "makey";
+            const correctPass = "talasan";
+
+            if (user === correctUser && pass === correctPass) {
+                window.location.href = "Home.html";
+            } else {
+                error.style.display = "block";
+            }
+        });
+
+        // Hide the error message when the user edits the fields
+        document.querySelectorAll("#username, #password").forEach(function(input) {
+            input.addEventListener("input", function() {
+                document.getElementById("error").style.display = "none";
+            });
+        });
+    </script>
+
+</body>
+</html>
